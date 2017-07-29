@@ -20,10 +20,14 @@ Using the Guild Wars 2 API to get a grasp on how to get data from an external si
         
         <?php 
         include "Header.php";
-        include "Sidebar.php";
         ?>
 
-        <div class="section">
+        <div class="layout">
+            <?php 
+            include "sidebar.php";
+            ?>
+            
+            <div class="section">
             <h1><span>Test of the GW2 API</span></h1>
             <h2>To get your account data, you must insert your API-Key. <br /> 
                 You can get it from <a href="https://account.arena.net/login"> The official GW2 Website</a> <br />
@@ -68,6 +72,8 @@ Using the Guild Wars 2 API to get a grasp on how to get data from an external si
 //            var_dump($json);                    // dumps the whole object
             ?>
                 
+            </div>
         </div>
+        
     </body>
 </html>

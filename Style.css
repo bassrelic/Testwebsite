@@ -65,7 +65,13 @@ p{
     margin: 0;
 }
 
+.layout{
+    display: flex;
+}
+
 .section{
+    flex:4;
+    order:1;
     background-color: #fff;
     padding: 15px;
     margin-bottom: 10px;
@@ -75,18 +81,14 @@ p{
 /* sidebar */
 
 .sidebar{
+    flex:1;
+    order: 2;
     text-align: left;
     min-width: 50px;
     height: max-content;
-    position: absolute;
-    right: 10px;
-    margin: 20px;
-    border: 20px;
-    border-radius: 3px;
+    margin-left: 10px;
+    border-radius: 5px;
     background-color: #efefef;
-    min-width: 300px;
-    width: auto;
-    max-width: 400px;
 }
 
 #sidebar{
@@ -104,16 +106,6 @@ p{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-}
-
-
-.sidebar{
-    color: #000000;
-    font-size: 18px;
-    font-family: Arial;
-    text-decoration: none;
-    display: block;
-    word-wrap: normal;
 }
 
 /*Glassy Topbar*/

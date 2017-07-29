@@ -20,34 +20,40 @@ bar
        
         <?php 
         include "Header.php";
-        include "Sidebar.php";
         ?>
         
 
+        <div class = "layout">
+            <?php 
+            include "Sidebar.php";
+            ?>
+            <div class="section">
+
+                <h1><span>Let's test what we can do here.</span></h1>
+                <ol>
+                    <li>Glass - Bar<br />
+                        <progress id="task-progress" max="100" value="100"></progress>
+                    </li>
+                    <li>Floating list with voting System<br />
+                        <progress id="task-progress" max="100" value="11">11 %</progress>
+                    </li>
+                    <li>Include Text with PHP / MySql<br />
+                        <progress id="task-progress" max="100" value="22"></progress>
+                    </li>
+                    <li>Sidebar used for navigation<br />
+                        <progress id="task-progress" max="100" value="0"></progress>
+                    </li>
+                    <li>Use a Api to get data (GW2 [?])<br />
+                        <progress id="task-progress" max="100" value="0"></progress>
+                    </li>
+                </ol>
+            </div>
         
-        <div class="section">
-            <h1><span>Let's test what we can do here.</span></h1>
-            <ol>
-                <li>Glass - Bar<br />
-                    <progress id="task-progress" max="100" value="100"></progress>
-                </li>
-                <li>Floating list with voting System<br />
-                    <progress id="task-progress" max="100" value="11">11 %</progress>
-                </li>
-                <li>Include Text with PHP / MySql<br />
-                    <progress id="task-progress" max="100" value="22"></progress>
-                </li>
-                <li>Sidebar used for navigation<br />
-                    <progress id="task-progress" max="100" value="0"></progress>
-                </li>
-                <li>Use a Api to get data (GW2 [?])<br />
-                    <progress id="task-progress" max="100" value="0"></progress>
-                </li>
-            </ol>
         </div>
         
         <div class="section">
             asdagsgs
-        </div>
+        </div>    
+        
     </body>
 </html>
