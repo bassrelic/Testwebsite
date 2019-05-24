@@ -6,7 +6,7 @@ bar
 <html>
     <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon" />
     <head>
-        <title>Testwebsite</title>
+        <title>Title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="Style.css">
@@ -15,7 +15,7 @@ bar
     <body>
         <div id="header" class="section">
             <img alt="" class="img-circle" src="http://img09.deviantart.net/3c60/i/2017/188/e/f/jellyfish_by_bassrelic-d4gmjtv.jpg">
-                 <p>A Name Goes Here!</p>
+                 <p>Title</p>
         </div>
        
         <?php 

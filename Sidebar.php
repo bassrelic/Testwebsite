@@ -6,9 +6,9 @@ Localized sidebar
             <nav class="sidebarheader">
                 Sidebar
             </nav>
-            <nav>
-                <ul id="sidebar">
-                    <li><a href="#">test1</a></li>
+            <nav class="sidebarcontent">
+                <ul class="sidebar">
+                    <li class="sidebarelement"><a href="#">test1</a></li>
                 </ul>
             </nav>
         </div>
