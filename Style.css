@@ -37,8 +37,8 @@ Setting the style of the website
 body{
     font-family: 'Handlee';
     font-size: 13pt;
-    background-color: #000000;
-    padding: 10px;
+    background-color: #24292e;
+    padding: 0px;
     margin: 0;
 }
 
@@ -57,6 +57,7 @@ h1 span {
 
 .img-circle{
     border: 6px solid white;
+    border-color: #20bcd5;
     border-radius: 50%;
 }
 
@@ -69,17 +70,27 @@ p{
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.section{
+.section1{
     flex:4;
     order:2;
     background-color: #fff;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
+}
+.section2{
+    flex:4;
+    order:2;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 /* sidebar */
@@ -90,35 +101,54 @@ p{
     text-align: left;
     min-width: 50px;
     /*height: max-content;*/
-    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #fff;
 }
 
-#sidebar{
+.sidebar{
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     line-break: auto;    
-    font-size: 12px;
+    font-size: 16px;
     font-weight: normal;
-    
 }
 
 .sidebarheader{
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    order: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 30px;
     background-color: #20bcd5;
-    text-align: center;
-    font-size: 16px;
+    text-align: left;
+    font-size: 24px;
     font-weight: bold;
 }
 
-#sidebar{
-    font-size: 16px;
-    color: #000000;
-    
+.sidebarcontent{
+    order: 1;
+    display: flex;
+    flex-direction: column;
 }
+
+.sidebarcontent a{
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    font-size: 18px;
+    font-family: 'Handlee';
+    text-decoration: none;
+}
+
+/*li.sidebarelement a{
+    color: #000000;
+    background-color: #7C7C7C;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}*/
 
 /*Glassy Topbar*/
 
@@ -126,7 +156,7 @@ nav{
     text-align: justify;
 }
 
-#nav{
+#navTopBar{
     background: linear-gradient(90deg,
         rgba(255,255,255,0)0%,
         rgba(255,255,255,0.2)25%,
@@ -139,26 +169,23 @@ nav{
     max-height: 20px;
 }
 
-#nav:after{
+#navTopBar:after{
     content: '';
     display: inline-block;
     width: 90%;
 }
 
-nav ul li{
+nav #navTopBar li{
     display: inline-block;
 }
+
 
 nav ul li a{
     color: #FFFFFF;
     font-size: 18px;
-    font-family: Arial;
+    font-family: 'Handlee';
     text-decoration: none;
     display: block;
-}
-
-li.sidebarelement a{
-    color: #000000;
 }
 
 /* Progress bars for todos */
