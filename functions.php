@@ -54,10 +54,29 @@ function increment_site_viewcounter($filename){
     return $res;
 }
 
+function increment_project_viewcounter($id){
+
+    $db = connect_db();    
+    $sql = "UPDATE projects
+            SET viewcounter = viewcounter + 1
+            WHERE id='$id';";
+    
+    $res = mysqli_query($db ,$sql);
+    return $res;
+}
+
 function parse_raw_text_to_html($path){
 
                 // read raw text as array
-                $raw = file($path) or die("Cannot read file");
+                try{
+                    if ( !file_exists($path) ) {
+                        throw new Exception('File not found.');
+                    }else{
+                        $raw = file($path);
+                    }
+                }catch(Exception $e){
+                    $raw = file("cont/404.txt");
+                }
 
                 // retrieve first and second lines (title and author)
                 $author = array_shift($raw);
@@ -66,9 +85,8 @@ function parse_raw_text_to_html($path){
                 // join remaining data into string
                 $data = join('', $raw);
 
-                // replace special characters with HTML entities
                 // replace line breaks with <br />
-                $html = nl2br(htmlspecialchars($data));
+                $html = nl2br($data);
 
                 // replace multiple spaces with single spaces
                 $html = preg_replace('/\s\s+/', ' ', $html);
@@ -78,7 +96,7 @@ function parse_raw_text_to_html($path){
                 
                 echo $author;
                 echo $date;
-                echo $html;
+                echo "$html";
 }
 ?>
 
@@ -94,15 +112,17 @@ function show_project_sidebar(){
     <nav class="sidebarcontent">
             <?php
             $db = connect_db();
-            $sql1 = 'SELECT shortname, sitename, score FROM pages WHERE pagetype=1 ORDER BY score DESC;';
+            $sql1 = 'SELECT shortname, score, id FROM projects WHERE pagetype=1 ORDER BY score DESC;';
             $res = mysqli_query($db ,$sql1) or die(mysql_error());
             $x=0;
             while (($data = mysqli_fetch_array($res)) && ($x < 6))
             {
                 $x++;
                 $shortname = $data[0];
-                $sitename = $data[1];
-                echo '<a href="'.$sitename.'">'.$shortname.'</a>';
+                $score = $data[1];
+                $id=$data[2];
+                $sitelink='project.php?id='.$id;
+                echo '<a href='.$sitelink.'>'.$shortname.'</a>';
             }
             ?>
             
