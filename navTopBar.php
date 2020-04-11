@@ -6,7 +6,7 @@ Localized Header
         <ul id="navTopBar">
             <li></li>
             <li><a href="index.php">Home</a></li>
-            <li><a href="projects.php">Projekts</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="#">Coming Soon</a></li>
             <li><a href="#">Coming Soon</a></li>
             <li></li>
