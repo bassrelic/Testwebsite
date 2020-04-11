@@ -105,27 +105,43 @@ function show_project_sidebar(){
     ?>
  <html>
     <div class="sidebar">
-    <nav class="sidebarheader">
-        Navigation
-    </nav>
+        <nav class="sidebarheader">
+            Navigation
+        </nav>
+        <nav class="sidebarbox">
 
-    <nav class="sidebarcontent">
-            <?php
-            $db = connect_db();
-            $sql1 = 'SELECT shortname, score, id FROM projects WHERE pagetype=1 ORDER BY score DESC;';
-            $res = mysqli_query($db ,$sql1) or die(mysql_error());
-            $x=0;
-            while (($data = mysqli_fetch_array($res)) && ($x < 6))
-            {
-                $x++;
-                $shortname = $data[0];
-                $score = $data[1];
-                $id=$data[2];
-                $sitelink='project.php?id='.$id;
-                echo '<a href='.$sitelink.'>'.$shortname.'</a>';
-            }
-            ?>
+            <nav class="sidebarcontent1">
+                <?php
+                $db = connect_db();
+                $sql1 = 'SELECT shortname, id FROM projects WHERE pagetype=1 ORDER BY score DESC;';
+                $res = mysqli_query($db ,$sql1) or die(mysql_error());
+                $x=0;
+                while (($data = mysqli_fetch_array($res)) && ($x < 20))
+                {
+                    $x++;
+                    $shortname = $data[0];
+                    $id=$data[1];
+                    $sitelink='project.php?id='.$id;
+                    echo '<a href='.$sitelink.'>'.$shortname.'</a>';
+                }
+                ?>
+
+            </nav>
             
+            <nav class="sidebarcontent2">                
+                <?php
+                $db = connect_db();
+                $sql1 = 'SELECT viewcounter FROM projects WHERE pagetype=1 ORDER BY score DESC;';
+                $res = mysqli_query($db ,$sql1) or die(mysql_error());
+                $x=0;
+                while (($data = mysqli_fetch_array($res)) && ($x < 20))
+                {
+                    $x++;
+                    $viewcounter = $data[0];
+                    echo $viewcounter.'<img src="icons/arrowup.png" alt="Italian Trulli" height="15" width="15">'."<br>";
+                }
+                ?>
+            </nav>
         </nav>
     </div> 
 </html>
@@ -141,21 +157,37 @@ function show_sidebar(){
     <nav class="sidebarheader">
         Navigation
     </nav>
+        <nav class="sidebarbox">
+            <nav class="sidebarcontent1">
+                <?php
+                $db = connect_db();
+                $sql1 = 'SELECT shortname, sitename FROM pages WHERE pagetype=0 ORDER BY score DESC;';
+                $res = mysqli_query($db ,$sql1) or die(mysql_error());
+                $x=0;
+                while (($data = mysqli_fetch_array($res)) && ($x < 6))
+                {
+                    $x++;
+                    $shortname = $data[0];
+                    $sitename = $data[1];
+                    echo '<a href="'.$sitename.'">'.$shortname.'</a>';
+                }
+                ?>
 
-    <nav class="sidebarcontent">
-            <?php
-            $db = connect_db();
-            $sql1 = 'SELECT shortname, sitename, score FROM pages WHERE pagetype=0 ORDER BY score DESC;';
-            $res = mysqli_query($db ,$sql1) or die(mysql_error());
-            $x=0;
-            while (($data = mysqli_fetch_array($res)) && ($x < 6))
-            {
-                $x++;
-                $shortname = $data[0];
-                $sitename = $data[1];
-                echo '<a href="'.$sitename.'">'.$shortname.'</a>';
-            }
-            ?>
+            </nav>
+            <nav class="sidebarcontent2">                
+                <?php
+                $db = connect_db();
+                $sql1 = 'SELECT viewcounter FROM pages WHERE pagetype=0 ORDER BY score DESC;';
+                $res = mysqli_query($db ,$sql1) or die(mysql_error());
+                $x=0;
+                while (($data = mysqli_fetch_array($res)) && ($x < 6))
+                {
+                    $x++;
+                    $viewcounter = $data[0];
+                    echo $viewcounter."<br>";
+                }
+                ?>
+            </nav>
             
         </nav>
     </div> 

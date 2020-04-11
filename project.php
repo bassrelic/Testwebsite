@@ -3,9 +3,18 @@
     require_once("config.php");
     require_once("functions.php");
 
-    //TODO!
-    //DO NOT USE GET METHOD!
-    //Try to implement post
+    //Filter for anything other than an integer
+    $valid = filter_input ( INPUT_GET, 
+                      'id', 
+                      FILTER_VALIDATE_INT,
+                      array('options'=>array('min_range' => 1)));
+    //
+    if(!$valid){
+        $id=0;
+    }else{
+        $id=$valid;
+    }
+        
     $id=$_GET["id"];
     $db = connect_db();
     $sql1 = 'SELECT sitename, shortname, date, slug FROM projects WHERE id='.$id.';';
@@ -14,7 +23,8 @@
     $sitename = $data[0];
     $shortname = $data[1];
     $slug = $data[3];
-    increment_project_viewcounter($id);
+    increment_project_viewcounter($id   );
+    
 ?>
 
 <html>

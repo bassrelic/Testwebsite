@@ -75,7 +75,7 @@ p{
 }
 
 .section1{
-    flex:4;
+    flex:5;
     order:2;
     background-color: #fff;
     padding: 15px;
@@ -83,7 +83,7 @@ p{
     border-radius: 10px;
 }
 .section2{
-    flex:4;
+    flex:5;
     order:2;
     background-color: #fff;
     padding: 15px;
@@ -98,6 +98,8 @@ p{
 .sidebar{
     flex:1;
     order: 1;
+    display: flex;
+    flex-direction: column;
     text-align: left;
     min-width: 50px;
     /*height: max-content;*/
@@ -105,11 +107,6 @@ p{
     margin-bottom: 10px;
     border-radius: 10px;
     background-color: #fff;
-}
-
-.sidebar{
-    display: flex;
-    flex-direction: column;
     list-style-type: none;
     line-break: auto;    
     font-size: 16px;
@@ -125,31 +122,39 @@ p{
     background-color: #20bcd5;
     text-align: left;
     color: #2f3233;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
 }
 
-.sidebarcontent{
+.sidebarbox{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebarcontent1{
     order: 1;
     display: flex;
     flex-direction: column;
 }
 
-.sidebarcontent a{
+.sidebarcontent1 a{
     color: #000000;
-    margin-bottom: 10px;
     margin-left: 30px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Handlee';
     text-decoration: none;
 }
 
-/*li.sidebarelement a{
+.sidebarcontent2{
+    order: 2;
     color: #000000;
-    background-color: #7C7C7C;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}*/
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Handlee';
+    text-decoration: none;
+}
+
+
 
 /*Glassy Topbar*/
 
