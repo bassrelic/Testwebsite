@@ -113,7 +113,7 @@ function show_project_sidebar(){
             <nav class="sidebarcontent1">
                 <?php
                 $db = connect_db();
-                $sql1 = 'SELECT shortname, id FROM projects WHERE pagetype=1 ORDER BY score DESC;';
+                $sql1 = 'SELECT shortname, id FROM projects ORDER BY score DESC;';
                 $res = mysqli_query($db ,$sql1) or die(mysql_error());
                 $x=0;
                 while (($data = mysqli_fetch_array($res)) && ($x < 20))
@@ -131,14 +131,25 @@ function show_project_sidebar(){
             <nav class="sidebarcontent2">                
                 <?php
                 $db = connect_db();
-                $sql1 = 'SELECT viewcounter FROM projects WHERE pagetype=1 ORDER BY score DESC;';
+                $sql1 = 'SELECT viewcounter, isNew, isMoving FROM projects ORDER BY score DESC;';
                 $res = mysqli_query($db ,$sql1) or die(mysql_error());
                 $x=0;
                 while (($data = mysqli_fetch_array($res)) && ($x < 20))
                 {
                     $x++;
                     $viewcounter = $data[0];
-                    echo $viewcounter.'<img src="icons/arrowup.png" alt="Italian Trulli" height="15" width="15">'."<br>";
+                    $isNew = $data[1];
+                    $isMoving = $data[2];
+                    $echostring = $viewcounter;
+                    if($isMoving < 0){
+                        $echostring = $echostring.'<img src="icons/arrowdown.png" alt="Italian Trulli" height="15" width="15">';
+                    }else if($isMoving > 0){
+                        $echostring = $echostring.'<img src="icons/arrowup.png" alt="Italian Trulli" height="15" width="15">';
+                    }
+                    if($isNew){
+                        $echostring = $echostring.'<img src="icons/isNew.png" alt="Italian Trulli" height="15" width="15">';
+                    }
+                    echo $echostring."<br>";
                 }
                 ?>
             </nav>

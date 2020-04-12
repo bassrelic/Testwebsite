@@ -30,7 +30,7 @@
 <html>
     <link rel="shortcut icon" href="icons/favicon.ico" type="icons/x-icon" />
     <head>
-        <title>Projects</title>
+        <title><?php echo $shortname; ?></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="Style.css">
@@ -39,7 +39,7 @@
     <body>
         <div id="header" class="section">
             <img alt="" class="img-circle" src="http://img09.deviantart.net/3c60/i/2017/188/e/f/jellyfish_by_bassrelic-d4gmjtv.jpg">
-                 <p><?php echo$shortname; ?></p>
+            <p><?php parse_raw_text_to_html("cont/sitename.txt") ?></p>
         </div>
        
         <?php 
@@ -53,7 +53,7 @@
         ?>
             <div class="section1">
 
-                <h1><span>Projects</span></h1>
+                <h1><span><?php echo $shortname; ?></span></h1>
                 <?php
                     parse_raw_text_to_html("cont/".$slug.".txt")
                 ?>
