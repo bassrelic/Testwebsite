@@ -42,7 +42,7 @@ $filename = $path_parts['basename']; // seit PHP 5.2.0
     <body>
         <div id="header" class="section">
             <img alt="" class="img-circle" src="http://img09.deviantart.net/3c60/i/2017/188/e/f/jellyfish_by_bassrelic-d4gmjtv.jpg">
-                 <p>Welcome</p>
+            <p><?php parse_raw_text_to_html("cont/sitename.txt") ?></p>
         </div>
        
         <?php 
