@@ -206,3 +206,31 @@ function show_sidebar(){
 <?php
 }
 ?>
+
+<?php
+function show_topbar_with_location($location){
+    ?>
+        <nav class = "topBar">
+                <nav></nav>
+                <nav></nav>
+                <?php
+                if($location == "home"){
+                    echo "<nav class = \"highlightTopBar\"><a href="."index.php".">Home</a></nav>\n";
+                }else{
+                    echo "<nav class = \"normalTopBar\"><a href="."index.php".">Home</a></nav>\n";
+                }
+                if($location == "projects"){
+                    echo "<nav class = \"highlightTopBar\"><a href="."projects.php".">Projects</a></nav>\n";
+                }else{
+                    echo "<nav class = \"normalTopBar\"><a href="."projects.php".">Projects</a></nav>\n"; //Flex needs echo to include /n
+                }
+                ?>
+                <nav class = "normalTopBar"><a href="#">Coming Soon</a></nav>
+                <nav class = "normalTopBar"><a href="#">Coming Soon</a></nav>
+                <nav></nav>
+                <nav></nav>
+            </ul>   
+        </nav>
+<?php
+}
+?>

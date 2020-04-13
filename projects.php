@@ -28,10 +28,9 @@ $filename = $path_parts['basename']; // seit PHP 5.2.0
         </div>
        
         <?php 
-        include "navTopBar.php";
+        show_topbar_with_location("projects")
         ?>
-        
-
+       
         <div class = "layout">     
         <?php
             show_project_sidebar();
