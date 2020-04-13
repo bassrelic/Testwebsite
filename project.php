@@ -23,7 +23,7 @@
     $sitename = $data[0];
     $shortname = $data[1];
     $slug = $data[3];
-    increment_project_viewcounter($id   );
+    increment_project_viewcounter($id);
     
 ?>
 
@@ -43,7 +43,7 @@
         </div>
        
         <?php 
-        include "navTopBar.php";
+        show_topbar_with_location("projects")
         ?>
         
 
